@@ -1,23 +1,52 @@
 import "./index.css";
-import Icon from "./assets/imgs/icon.png";
-import { canvas } from "./ui/canvas";
+import { canvas, ctx } from "./ui/canvas";
 
-window.addEventListener("load", () => {
-  function printMe() {
-    console.log("Imprima algo diferente!");
+const CANVAS_WIDTH = (canvas.width = 500);
+const CANVAS_HEIGHT = (canvas.height = 800);
+const numberOfEnemies = 100;
+const enemiesArray: Enemy[] = [];
+
+class Enemy {
+  constructor(
+    public x = Math.random() * canvas.width,
+    public y = Math.random() * canvas.height,
+    public width = 100,
+    public height = 100,
+    public speed = Math.random() * 4 - 2
+  ) {}
+
+  update() {
+    this.x += this.speed;
+    this.y += this.speed;
   }
 
-  const div = document.createElement("div");
-  const icon = new Image();
-  icon.src = Icon;
+  draw() {
+    ctx.strokeRect(this.x, this.y, this.width, this.height);
+  }
+}
 
-  const btn = document.createElement("button");
-  btn.innerText = "Click here!";
-  btn.onclick = printMe;
+// const enemy1 = new Enemy();
 
-  div.appendChild(canvas);
-  div.appendChild(icon);
-  div.appendChild(btn);
+for (let i = 0; i < numberOfEnemies; i++) {
+  enemiesArray.push(new Enemy());
+}
 
-  document.body.appendChild(div);
+function animate() {
+  // Clear the canvas
+  ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+  enemiesArray.forEach((enemy) => {
+    enemy.update();
+    enemy.draw();
+  });
+
+  // Game loop
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener("load", () => {
+  document.body.appendChild(canvas);
+
+  // Start Game loop
+  animate();
 });

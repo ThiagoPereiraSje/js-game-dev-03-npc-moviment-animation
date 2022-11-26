@@ -7,7 +7,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "NPC Movement Animations",
+      title: "NPC Movement Animation",
     }),
   ],
   module: {
