@@ -10,6 +10,8 @@ const enemiesArray: Enemy[] = [];
 let gameFrame = 0;
 
 class Enemy {
+  private x: number;
+  private y: number;
   private width: number;
   private height: number;
   private image = new Image();
@@ -17,9 +19,7 @@ class Enemy {
   private flapSpeed = Math.floor(Math.random() * 3 + 1);
 
   constructor(
-    public x = Math.random() * canvas.width,
-    public y = Math.random() * canvas.height,
-    public speed = Math.random() * 4 - 2,
+    // public speed = Math.random() * 4 - 2,
     private spriteWidth = 293,
     private spriteHeight = 155
   ) {
@@ -27,13 +27,17 @@ class Enemy {
     this.width = this.spriteWidth / 2.5;
     this.height = this.spriteHeight / 2.5;
     this.frame = 0;
+
+    // Enemy position
+    this.x = Math.random() * (canvas.width - this.width);
+    this.y = Math.random() * (canvas.height - this.height);
   }
 
   update() {
-    this.x += this.speed;
-    this.y += this.speed;
+    this.x += Math.random() * 5 - 2.5;
+    this.y += Math.random() * 5 - 2.5;
 
-    // animate sprites
+    // Animate sprites
     if (gameFrame % this.flapSpeed === 0) {
       this.frame > 4 ? (this.frame = 0) : this.frame++;
     }
