@@ -7,13 +7,17 @@ export class Enemy {
   width: number;
   height: number;
   image = new Image();
-  spriteWidth = 293;
-  spriteHeight = 155;
+  spriteWidth: number;
+  spriteHeight: number;
   frame: number;
   flapSpeed = Math.floor(Math.random() * 3 + 1);
 
   constructor(image: any) {
     this.image.src = image;
+
+    this.spriteWidth = 293;
+    this.spriteHeight = 155;
+
     this.width = this.spriteWidth / 2.5;
     this.height = this.spriteHeight / 2.5;
     this.frame = 0;
