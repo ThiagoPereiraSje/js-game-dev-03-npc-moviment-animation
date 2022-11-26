@@ -3,6 +3,7 @@ import enemy1 from "./assets/imgs/enemy1.png";
 import enemy2 from "./assets/imgs/enemy2.png";
 import enemy3 from "./assets/imgs/enemy3.png";
 import { canvas, ctx } from "./ui/canvas";
+import { controls } from "./ui/controls";
 
 import { Enemy } from "./classes/Enemy";
 import { Enemy2 } from "./classes/Enemy2";
@@ -40,6 +41,7 @@ function animate() {
 
 window.addEventListener("load", () => {
   document.body.appendChild(canvas);
+  document.body.appendChild(controls());
 
   // Start Game loop
   animate();

@@ -1,0 +1,15 @@
+.controls {
+  background-color: bisque;
+  width: 400px;
+  height: 800px;
+  position: absolute;
+}
+
+.controls div {
+  padding: 0.5rem;
+}
+
+.controls label {
+  display: inline-block;
+  width: 70px;
+}
