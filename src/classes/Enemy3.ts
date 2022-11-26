@@ -13,12 +13,14 @@ export class Enemy3 extends Enemy {
 
   update(gameFrame: number) {
     this.x =
-      (gameProps.canvasWidth / 2) * Math.sin((this.angle * Math.PI) / 90) +
+      (gameProps.canvasWidth / 2) *
+        Math.sin((this.angle * Math.PI) / gameProps.sine) +
       (gameProps.canvasWidth / 2 - this.width / 2);
 
     // Geometric movement
     this.y =
-      (gameProps.canvasHeigth / 2) * Math.cos((this.angle * Math.PI) / 270) +
+      (gameProps.canvasHeigth / 2) *
+        Math.cos((this.angle * Math.PI) / gameProps.cosine) +
       (gameProps.canvasHeigth / 2 - this.height / 2);
 
     this.angle += this.angleSpeed;

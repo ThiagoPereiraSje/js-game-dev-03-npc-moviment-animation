@@ -11,6 +11,8 @@ import { Enemy3 } from "./classes/Enemy3";
 globalThis.gameProps = {
   canvasWidth: (canvas.width = 500),
   canvasHeigth: (canvas.height = 800),
+  sine: 90,
+  cosine: 270,
 };
 
 const numberOfEnemies = 100;

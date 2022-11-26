@@ -8,6 +8,8 @@ declare module "*.module.css";
 type GameProps = {
   canvasWidth: number;
   canvasHeigth: number;
+  sine: number;
+  cosine: number;
 };
 
 declare var gameProps: GameProps;
