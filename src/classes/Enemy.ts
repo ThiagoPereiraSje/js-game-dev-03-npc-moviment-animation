@@ -1,21 +1,18 @@
 const CANVAS_WIDTH = 500;
 const CANVAS_HEIGHT = 800;
 
-export class Enemy1 {
-  private x: number;
-  private y: number;
-  private width: number;
-  private height: number;
-  private image = new Image();
-  private frame: number;
-  private flapSpeed = Math.floor(Math.random() * 3 + 1);
+export class Enemy {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  image = new Image();
+  spriteWidth = 293;
+  spriteHeight = 155;
+  frame: number;
+  flapSpeed = Math.floor(Math.random() * 3 + 1);
 
-  constructor(
-    // public speed = Math.random() * 4 - 2,
-    image: any,
-    private spriteWidth = 293,
-    private spriteHeight = 155
-  ) {
+  constructor(image: any) {
     this.image.src = image;
     this.width = this.spriteWidth / 2.5;
     this.height = this.spriteHeight / 2.5;
