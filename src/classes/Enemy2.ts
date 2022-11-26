@@ -13,6 +13,11 @@ export class Enemy2 extends Enemy {
 
     this.spriteWidth = 266;
     this.spriteHeight = 188;
+
+    const size = Math.random() * 2 + 1;
+
+    this.width = this.spriteWidth / size;
+    this.height = this.spriteHeight / size;
   }
 
   update(gameFrame: number) {
