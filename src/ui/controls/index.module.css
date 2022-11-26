@@ -1,8 +1,9 @@
 .controls {
   background-color: bisque;
-  width: 400px;
+  width: 280px;
   height: 800px;
   position: absolute;
+  left: 510px;
 }
 
 .controls div {

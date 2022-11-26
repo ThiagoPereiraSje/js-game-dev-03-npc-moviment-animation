@@ -17,8 +17,14 @@ export function controls() {
   `;
 
   const inputSine = element.querySelector("#inputSine") as HTMLInputElement;
+  const inputCosine = element.querySelector("#inputCosine") as HTMLInputElement;
+
   inputSine.addEventListener("change", (e: any) => {
     gameProps.sine = Number(e.target.value);
+  });
+
+  inputCosine.addEventListener("change", (e: any) => {
+    gameProps.cosine = Number(e.target.value);
   });
 
   return element;
