@@ -8,20 +8,23 @@ import { Enemy } from "./classes/Enemy";
 import { Enemy2 } from "./classes/Enemy2";
 import { Enemy3 } from "./classes/Enemy3";
 
-const CANVAS_WIDTH = (canvas.width = 500);
-const CANVAS_HEIGHT = (canvas.height = 800);
+globalThis.gameProps = {
+  canvasWidth: (canvas.width = 500),
+  canvasHeigth: (canvas.height = 800),
+};
+
 const numberOfEnemies = 100;
 const enemiesArray: Enemy[] = [];
 
 let gameFrame = 0;
 
 for (let i = 0; i < numberOfEnemies; i++) {
-  enemiesArray.push(new Enemy3(enemy3));
+  enemiesArray.push(new Enemy(enemy1));
 }
 
 function animate() {
   // Clear the canvas
-  ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  ctx.clearRect(0, 0, gameProps.canvasWidth, gameProps.canvasHeigth);
 
   enemiesArray.forEach((enemy) => {
     enemy.update(gameFrame);

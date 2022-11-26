@@ -1,6 +1,6 @@
 import { Enemy } from "./Enemy";
 
-const CANVAS_WIDTH = 500;
+// const CANVAS_WIDTH = 500;
 
 export class Enemy2 extends Enemy {
   speed = Math.random() * 4 + 1;
@@ -27,7 +27,7 @@ export class Enemy2 extends Enemy {
     this.y += this.curve * Math.sin(this.angle);
     this.angle += this.angleSpeed;
 
-    if (this.x + this.width < 0) this.x = CANVAS_WIDTH;
+    if (this.x + this.width < 0) this.x = gameProps.canvasWidth;
 
     // Animate sprites
     if (gameFrame % this.flapSpeed === 0) {

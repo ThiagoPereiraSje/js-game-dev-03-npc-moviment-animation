@@ -1,7 +1,7 @@
 import { Enemy } from "./Enemy";
 
-const CANVAS_WIDTH = 500;
-const CANVAS_HEIGHT = 800;
+// const CANVAS_WIDTH = 500;
+// const CANVAS_HEIGHT = 800;
 
 export class Enemy3 extends Enemy {
   speed = Math.random() * 4 + 1;
@@ -17,17 +17,17 @@ export class Enemy3 extends Enemy {
 
   update(gameFrame: number) {
     this.x =
-      (CANVAS_WIDTH / 2) * Math.sin((this.angle * Math.PI) / 90) +
-      (CANVAS_WIDTH / 2 - this.width / 2);
+      (gameProps.canvasWidth / 2) * Math.sin((this.angle * Math.PI) / 90) +
+      (gameProps.canvasWidth / 2 - this.width / 2);
 
     // Geometric movement
     this.y =
-      (CANVAS_HEIGHT / 2) * Math.cos((this.angle * Math.PI) / 270) +
-      (CANVAS_HEIGHT / 2 - this.height / 2);
+      (gameProps.canvasHeigth / 2) * Math.cos((this.angle * Math.PI) / 270) +
+      (gameProps.canvasHeigth / 2 - this.height / 2);
 
     this.angle += this.angleSpeed;
 
-    if (this.x + this.width < 0) this.x = CANVAS_WIDTH;
+    if (this.x + this.width < 0) this.x = gameProps.canvasWidth;
 
     // Animate sprites
     if (gameFrame % this.flapSpeed === 0) {

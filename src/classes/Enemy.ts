@@ -1,6 +1,3 @@
-const CANVAS_WIDTH = 500;
-const CANVAS_HEIGHT = 800;
-
 export class Enemy {
   x: number;
   y: number;
@@ -23,8 +20,8 @@ export class Enemy {
     this.frame = 0;
 
     // Enemy position
-    this.x = Math.random() * (CANVAS_WIDTH - this.width);
-    this.y = Math.random() * (CANVAS_HEIGHT - this.height);
+    this.x = Math.random() * (gameProps.canvasWidth - this.width);
+    this.y = Math.random() * (gameProps.canvasHeigth - this.height);
   }
 
   update(gameFrame: number) {
