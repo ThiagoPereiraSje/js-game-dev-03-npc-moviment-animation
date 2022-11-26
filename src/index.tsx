@@ -19,7 +19,7 @@ const enemiesArray: Enemy[] = [];
 let gameFrame = 0;
 
 for (let i = 0; i < numberOfEnemies; i++) {
-  enemiesArray.push(new Enemy(enemy1));
+  enemiesArray.push(new Enemy3(enemy3));
 }
 
 function animate() {

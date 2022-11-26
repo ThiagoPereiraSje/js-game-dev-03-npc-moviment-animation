@@ -1,10 +1,6 @@
 import { Enemy } from "./Enemy";
 
-// const CANVAS_WIDTH = 500;
-// const CANVAS_HEIGHT = 800;
-
 export class Enemy3 extends Enemy {
-  speed = Math.random() * 4 + 1;
   angle = Math.random() * 100;
   angleSpeed = Math.random() * 0.8 + 0.2;
 
