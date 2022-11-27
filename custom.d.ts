@@ -10,6 +10,7 @@ type GameProps = {
   canvasHeigth: number;
   sine: number;
   cosine: number;
+  speed: number;
 };
 
 declare var gameProps: GameProps;

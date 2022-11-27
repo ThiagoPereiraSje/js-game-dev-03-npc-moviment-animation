@@ -23,7 +23,7 @@ export class Enemy3 extends Enemy {
         Math.cos((this.angle * Math.PI) / gameProps.cosine) +
       (gameProps.canvasHeigth / 2 - this.height / 2);
 
-    this.angle += this.angleSpeed;
+    this.angle += this.angleSpeed + gameProps.speed;
 
     if (this.x + this.width < 0) this.x = gameProps.canvasWidth;
 

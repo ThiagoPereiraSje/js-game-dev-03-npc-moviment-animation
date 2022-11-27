@@ -1,9 +1,9 @@
 .controls {
   background-color: bisque;
-  width: 280px;
+  width: 200px;
   height: 800px;
   position: absolute;
-  left: 510px;
+  left: 515px;
 }
 
 .controls div {
@@ -12,5 +12,9 @@
 
 .controls label {
   display: inline-block;
-  width: 70px;
+  width: 80px;
+}
+
+.controls input {
+  width: 80px;
 }

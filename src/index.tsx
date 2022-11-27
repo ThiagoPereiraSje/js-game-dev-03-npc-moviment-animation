@@ -14,6 +14,7 @@ globalThis.gameProps = {
   canvasHeigth: (canvas.height = 800),
   sine: 90,
   cosine: 270,
+  speed: 0,
 };
 
 const numberOfEnemies = 100;
