@@ -2,12 +2,15 @@ import "./index.css";
 import enemy1 from "./assets/imgs/enemy1.png";
 import enemy2 from "./assets/imgs/enemy2.png";
 import enemy3 from "./assets/imgs/enemy3.png";
+import enemy4 from "./assets/imgs/enemy4.png";
+
 import { canvas, ctx } from "./ui/canvas";
 import { controls } from "./ui/controls";
 
 import { Enemy } from "./classes/Enemy";
 import { Enemy2 } from "./classes/Enemy2";
 import { Enemy3 } from "./classes/Enemy3";
+import { Enemy4 } from "./classes/Enemy4";
 
 globalThis.gameProps = {
   canvasWidth: (canvas.width = 500),
@@ -17,13 +20,13 @@ globalThis.gameProps = {
   speed: 0,
 };
 
-const numberOfEnemies = 100;
+const numberOfEnemies = 30;
 const enemiesArray: Enemy[] = [];
 
 let gameFrame = 0;
 
 for (let i = 0; i < numberOfEnemies; i++) {
-  enemiesArray.push(new Enemy3(enemy3));
+  enemiesArray.push(new Enemy4(enemy4));
 }
 
 function animate() {
@@ -42,7 +45,6 @@ function animate() {
 
 window.addEventListener("load", () => {
   document.body.appendChild(canvas);
-  document.body.appendChild(controls());
 
   // Start Game loop
   animate();
