@@ -1,8 +1,6 @@
 import { Enemy } from "./Enemy";
 
 export class Enemy4 extends Enemy {
-  // angle = 400;
-  // angleSpeed = Math.random() * 0.8 + 0.2;
   newX = Math.random() * gameProps.canvasWidth;
   newY = Math.random() * gameProps.canvasHeigth;
   interval = Math.floor(Math.random() * 200 + 50);
@@ -25,15 +23,6 @@ export class Enemy4 extends Enemy {
 
     this.x -= dx / 70;
     this.y -= dy / 70;
-
-    // this.x = 0;
-
-    // Geometric movement
-    // this.y = 0;
-
-    // this.angle += this.angleSpeed + gameProps.speed;
-
-    // if (this.x + this.width < 0) this.x = gameProps.canvasWidth;
 
     // Animate sprites
     if (gameFrame % this.flapSpeed === 0) {
